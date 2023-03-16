@@ -9,9 +9,6 @@ __pycache__/
 # C extensions
 *.so
 
-# Training Data
-data/
-
 # Distribution / packaging
 .Python
 build/
