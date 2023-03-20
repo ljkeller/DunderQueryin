@@ -1,6 +1,9 @@
 # DunderAI
 > What character from The Office would say that quote?
 
+![kevin_hotdogs](https://user-images.githubusercontent.com/44109284/226338232-02445a0f-b2ba-471f-a804-b0c00a8b1c0a.png)
+![hotdog_ground_truth](https://user-images.githubusercontent.com/44109284/226338430-a1b7c179-f48b-4837-8636-338bbee814da.jpg)
+
 DunderAI is a web application that uses deep learning with an LSTM model to predict which character from the popular TV show "The Office" is most likely to have said a given quote. With this application, users can test their knowledge of the show's characters and their mannerisms.
 
 ## How it Works
