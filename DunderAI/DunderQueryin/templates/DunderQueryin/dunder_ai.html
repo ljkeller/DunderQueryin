@@ -2,21 +2,26 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>DunderAI</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'DunderQueryin/dunder_ai.css' %}">
 	<script type="text/javascript" src="DunderAI.js"></script>
 </head>
+
 <body>
 	<div class="container">
 		<h1>DunderAI</h1>
 		<p>Submit your favorite quote from The Office!</p>
-		<form id="quote-form" onsubmit="submitQuote()">
+		<form id="quote-form" action="{% url 'query' %}" method="post">
+			{% csrf_token %}
+			{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 			<label for="quote">Quote:</label>
-			<textarea id="quote" name="quote"></textarea><br>
+			<textarea id="quote" name="quote" form="quote-form"></textarea><br>
 			<input type="submit" value="Submit">
 		</form>
 		<div id="quotes"></div>
 	</div>
 </body>
+
 </html>
