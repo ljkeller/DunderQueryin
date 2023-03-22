@@ -13,9 +13,7 @@ def query(request):
     else:
         print(quote)
         # Predict here
-        
-        # 'redirect' response to prevent post -> user hits back -> posts again
-        return HttpResponseRedirect('/')
-        # TODO: take to results page
-        # character = dunder_ai.predict(quote)
-        # return HttpResponseRedirect(reverse('query:result', args=(character,)))
+
+        # Not sending HTPP response, but I should be
+        # workaround to render correctly on this webpage
+        return render(request, 'DunderQueryin/dunder_ai.html', {'model_prediction': 'Kevin'})

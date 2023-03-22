@@ -13,6 +13,14 @@
 	<div class="container">
 		<h1>DunderAI</h1>
 		<p>Submit your favorite quote from The Office!</p>
+		{% if model_prediction %}
+		<div class="classifier_container">
+			<div class="card">
+				<h2 class="name">{{model_prediction}}</h2>
+				<img id="predictedImage" src="{% static 'DunderQueryin/images/Kevin.jpeg' %}" alt="{{model_prediction}}">
+			</div>
+		</div>
+		{% endif %}
 		<form id="quote-form" action="{% url 'query' %}" method="post">
 			{% csrf_token %}
 			{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

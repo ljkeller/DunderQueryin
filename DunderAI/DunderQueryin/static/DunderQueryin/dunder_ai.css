@@ -6,11 +6,36 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin:  5% auto auto auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+}
+
+.classifier_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 24px;
+    margin: 0;
 }
 
 h1 {
