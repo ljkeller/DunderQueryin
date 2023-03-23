@@ -17,13 +17,16 @@ The model is built using Long Short-Term Memory (LSTM) networks, a type of recur
 - Ability to handle direct quotes accurately from any episode of "The Office" *even deleted scenes*
 
 
-## Usage (preliminary, backend not linked up)
+## Usage (localhost for now)
 1. `conda env create -f environment.yml`
    1. `conda activate DunderAI`
 2. `cd DunderAI && python managel.py`
 3. Visit http://127.0.0.1:8000/ in your web browser.
 4. Input a quote from "The Office" into the text field.
-5. Click the "Predict" button to receive a prediction of which character said the quote.
+5. Click the "Submit" button to receive a prediction of which character said the quote.
+
+https://user-images.githubusercontent.com/44109284/227211158-9cc58e89-ceb4-40c8-a090-01e058a4c548.mp4
+
 
 ## Credits
 DunderAI was created by myself using Python, Fastai, Django, and HTML/CSS. The dataset used to train the LSTM model was obtained from [[Kaggle](https://www.kaggle.com/datasets/nasirkhalid24/the-office-us-complete-dialoguetranscript)]. This all started as a healthy competition with a friend to see who could train the better model- an excuse to learn more about NLP.
