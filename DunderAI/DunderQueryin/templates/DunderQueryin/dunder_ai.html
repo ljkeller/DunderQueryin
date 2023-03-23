@@ -1,4 +1,5 @@
 {% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
 
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,11 @@
 	<div class="container">
 		<h1>DunderAI</h1>
 		<p>Submit your favorite quote from The Office!</p>
-		{% if model_prediction %}
+		{% if character_prediction %}
 		<div class="classifier_container">
 			<div class="card">
-				<h2 class="name">{{model_prediction}}</h2>
-				<img id="predictedImage" src="{% static 'DunderQueryin/images/Kevin.jpeg' %}" alt="{{model_prediction}}">
+				<h2 class="name">{{character_prediction}}, {{prediction_probability}}%</h2>
+				<img id="predictedImage" src="{{ STATIC_PREFIX }}DunderQueryin/images/{{character_prediction}}.jpeg" alt="{{character_prediction}}">
 			</div>
 		</div>
 		{% endif %}
