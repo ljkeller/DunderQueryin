@@ -1,7 +1,6 @@
 # DunderAI
 > What character from The Office would say that quote?
 
-![kevin_hotdogs](https://user-images.githubusercontent.com/44109284/226338232-02445a0f-b2ba-471f-a804-b0c00a8b1c0a.png)
 ![hotdog_ground_truth](https://user-images.githubusercontent.com/44109284/226338430-a1b7c179-f48b-4837-8636-338bbee814da.jpg)
 
 DunderAI is a web application that uses deep learning with an LSTM model to predict which character from the popular TV show "The Office" is most likely to have said a given quote. With this application, users can test their knowledge of the show's characters and their mannerisms.
@@ -17,15 +16,15 @@ The model is built using Long Short-Term Memory (LSTM) networks, a type of recur
 - Ability to handle direct quotes accurately from any episode of "The Office" *even deleted scenes*
 
 
-## Usage (localhost for now)
+## Usage (localhost)
 1. `conda env create -f environment.yml`
    1. `conda activate DunderAI`
-2. `cd DunderAI && python managel.py`
+2. `cd DunderAI && python manage.py`
 3. Visit http://127.0.0.1:8000/ in your web browser.
 4. Input a quote from "The Office" into the text field.
-5. Click the "Submit" button to receive a prediction of which character said the quote.
+5. Click the "Submit" button to receive a prediction of which character said the quote. (Assuming you have a fastai model in data/models)
 
-https://user-images.githubusercontent.com/44109284/227211158-9cc58e89-ceb4-40c8-a090-01e058a4c548.mp4
+https://user-images.githubusercontent.com/44109284/227528473-79c286dc-9ddd-4c45-93d7-4b88e4375b6a.mp4
 
 
 ## Credits
