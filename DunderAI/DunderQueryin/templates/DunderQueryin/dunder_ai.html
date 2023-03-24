@@ -15,12 +15,18 @@
 		<h1>DunderAI</h1>
 		<p>Submit your favorite quote from The Office!</p>
 		{% if character_prediction %}
+
 		<div class="classifier_container">
 			<div class="card">
 				<h2 class="name">{{character_prediction}}, {{prediction_probability}}%</h2>
-				<img id="predictedImage" src="{{ STATIC_PREFIX }}DunderQueryin/images/{{character_prediction}}.jpeg" alt="{{character_prediction}}">
+				<img id="predictedImage" src="{{ STATIC_PREFIX }}DunderQueryin/images/{{character_prediction}}.jpeg"
+					alt="{{character_prediction}}">
 			</div>
 		</div>
+		<blockquote class="user-quote">
+			{{user_quote}}
+		</blockquote>
+
 		{% endif %}
 		<form id="quote-form" action="{% url 'query' %}" method="post">
 			{% csrf_token %}
@@ -29,7 +35,6 @@
 			<textarea id="quote" name="quote" form="quote-form"></textarea><br>
 			<input type="submit" value="Submit">
 		</form>
-		<div id="quotes"></div>
 	</div>
 </body>
 
