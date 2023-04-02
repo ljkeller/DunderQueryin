@@ -1,15 +1,32 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from pathlib import Path
 
 from fastai.text.all import *
+from transformers import *
+from blurr.text.data.all import *
+from blurr.text.modeling.all import *
 
 # TODO: Should we serve this through static/DunderQueryin?
-MODEL_PATH='data/model'
+MODEL_PATH=Path('data/model')
 
-def quote_to_prediction(quote):
-    learner = load_learner(MODEL_PATH)
-    character, character_tensor, tensors = learner.predict(quote)
-    return character, tensors[character_tensor].item()
+def infer(quote, inference):
+    character, prob = "", 0.0
+
+    learner = load_learner(MODEL_PATH/inference)
+    if inference == 'LSTM':
+        character, character_tensor, tensors = learner.predict(quote)
+        character, prob = character, tensors[character_tensor].item()
+    elif inference == 'BERT':
+        results = learner.predict(quote)[0]
+        character, prob = results['class_labels'][results['class_index']], results['probs'][results['class_index']]
+    else:
+        print("Dont have that type of inference!")
+
+    return character, prob
+
+def quote_to_prediction(quote, inference='BERT'):
+    return infer(quote, inference)
 
 def build_render_context(character, probability, quote, max_quote_len=128):
     model_results_context = {}
