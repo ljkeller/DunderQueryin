@@ -42,11 +42,16 @@ def query(request):
     try:
         # TODO: Enforce 'normal' quote input (regex?)
         quote = str.strip(request.POST['quote'])
+
+        # FORM default value is usingBERT=false
+        # usingBERT key should always be part of post, but default to LSTM
+        model = 'BERT' if request.POST['usingBERT'] == 'true' else 'LSTM'
+
         if not quote: return HttpResponseRedirect('/')
     except (KeyError):
         return render(request, 'DunderQueryin/dunder_ai.html', {'error_message': 'Something went wrong with your quote!'})
     else:
-        character_prediction, prediction_probability = quote_to_prediction(quote)
+        character_prediction, prediction_probability = quote_to_prediction(quote, inference=model)
 
         # Not sending HTPP response, but I should be
         # workaround to render correctly on this webpage

@@ -7,7 +7,6 @@
 <head>
 	<title>DunderAI</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'DunderQueryin/dunder_ai.css' %}">
-	<script type="text/javascript" src="DunderAI.js"></script>
 </head>
 
 <body>
@@ -33,7 +32,20 @@
 			{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 			<label for="quote">Quote:</label>
 			<textarea id="quote" name="quote" form="quote-form"></textarea><br>
-			<input type="submit" value="Submit">
+			
+			<div class="submit-button-pair">
+				<div class="button b2" id="button-model">
+					<input type="hidden" name="usingBERT" value="false"/>
+					<input type="checkbox" name="usingBERT" id="select_model" class="checkbox" value="true"/>
+
+					<div class="knobs">
+						<span>LSTM</span>
+					</div>
+					<div class="layer"></div>
+				</div>
+				<input type="submit" value="Submit">
+			</div>
+
 		</form>
 	</div>
 </body>
