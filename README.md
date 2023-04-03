@@ -11,9 +11,7 @@ DunderAI uses a deep learning model trained on quotes from the top 21[^chars] ch
 
 ![top21](https://user-images.githubusercontent.com/44109284/229494059-2e596235-9f92-426c-89e0-ea42aaa4f37e.png)
 
-The two available models for inference are the Long Short-Term Memory (LSTM) and a Tranformer models. [LSTM](https://www.wikiwand.com/en/Long_short-term_memory) networks are a form of recurrent neural networks (RNN) that are particularily good at processing sequences of data. Transformers, (DunderAI builds off of [BERT](https://www.wikiwand.com/en/BERT_(language_model))) are very good at processing sequence data as well, but with a different mechanism, 'self-attention'.
-
-is built using both a Long Short-Term Memory (LSTM) network and a Tranformer, a type of recurrent neural network (RNN) that is particularly good at processing sequences of data. When a user inputs a quote, the model uses the input text to predict which character is most likely to have said it; model predictions are all based upon what language and speech patterns the LSTM could pick up on.
+The two available models for inference are the Long Short-Term Memory (LSTM) and a Tranformer models. [LSTM](https://www.wikiwand.com/en/Long_short-term_memory) networks are a form of recurrent neural networks (RNN) that are particularily good at processing sequences of data. Transformers, (DunderAI builds off of [BERT](https://www.wikiwand.com/en/BERT_(language_model))) are very good at processing sequence data as well, but with a different mechanism, 'self-attention'. When a user inputs a quote, the model uses the input text to predict which character is most likely to have said the line; model predictions are all based upon what language and speech patterns the network could pick up on.
 
 ## Features
 - Easy to use web interface
